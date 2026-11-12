@@ -1,6 +1,6 @@
 
 /* =========================================
-   1. GLOBAL STYLES
+   GLOBAL SETTINGS
 ========================================= */
 
 * {
@@ -18,12 +18,13 @@
     --light-gray: #f5f7fa;
     --gray: #667085;
     --dark: #202b38;
+    --border: #e3e8ef;
 }
 
 body {
-    font-family: 'Segoe UI', Arial, sans-serif;
+    font-family: "Segoe UI", Arial, sans-serif;
     color: var(--dark);
-    background-color: var(--white);
+    background: var(--white);
     line-height: 1.7;
 }
 
@@ -38,11 +39,11 @@ section {
 
 
 /* =========================================
-   2. NAVIGATION BAR
+   NAVIGATION
 ========================================= */
 
 header {
-    background-color: var(--white);
+    background: var(--white);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -50,7 +51,7 @@ header {
 }
 
 .navbar {
-    max-width: 1150px;
+    max-width: 1200px;
     margin: auto;
     padding: 20px 30px;
     display: flex;
@@ -68,7 +69,7 @@ header {
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 30px;
+    gap: 28px;
 }
 
 .nav-links a {
@@ -84,15 +85,15 @@ header {
 
 
 /* =========================================
-   3. HERO / HOME SECTION
+   HERO SECTION
 ========================================= */
 
 .hero {
     min-height: 620px;
     background: linear-gradient(
         120deg,
-        #142b45 0%,
-        #244e70 100%
+        #142b45,
+        #244e70
     );
     color: var(--white);
     display: flex;
@@ -106,30 +107,37 @@ header {
 
 .eyebrow {
     color: #75a9d3;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 750;
     letter-spacing: 2px;
     margin-bottom: 15px;
 }
 
 .hero h1 {
-    font-size: clamp(40px, 6vw, 64px);
+    font-size: clamp(42px, 6vw, 68px);
     line-height: 1.15;
-    margin-bottom: 15px;
+    margin-bottom: 18px;
 }
 
 .hero h2 {
-    font-size: 23px;
+    font-size: 22px;
     font-weight: 400;
     color: #c8d9e8;
-    margin-bottom: 25px;
+    margin-bottom: 12px;
 }
 
-.hero-content > p:not(.eyebrow) {
-    max-width: 650px;
-    font-size: 17px;
+.graduation {
+    color: #a9c6df;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.hero-description {
+    max-width: 680px;
+    font-size: 16px;
     color: #e0e8ef;
-    margin-bottom: 35px;
+    margin-bottom: 32px;
 }
 
 .hero-buttons {
@@ -148,61 +156,52 @@ header {
 }
 
 .primary-btn {
-    background-color: var(--white);
+    background: var(--white);
     color: var(--navy);
 }
 
 .primary-btn:hover {
-    background-color: #dce8f2;
+    background: #dce8f2;
     transform: translateY(-2px);
 }
 
 .secondary-btn {
-    border: 1px solid #ffffff;
+    border: 1px solid var(--white);
     color: var(--white);
 }
 
 .secondary-btn:hover {
-    background-color: rgba(255, 255, 255, 0.12);
-    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.12);
 }
 
 
 /* =========================================
-   4. GENERAL SECTION STYLING
+   GENERAL SECTIONS
 ========================================= */
 
 .section {
-    padding: 90px 30px;
-    max-width: 1150px;
+    max-width: 1200px;
     margin: auto;
+    padding: 85px 30px;
 }
 
 .section-heading {
-    margin-bottom: 40px;
+    margin-bottom: 38px;
 }
 
 .section-heading h2 {
     color: var(--navy);
     font-size: 34px;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .section-heading > p:not(.eyebrow) {
     color: var(--gray);
+    max-width: 700px;
 }
-
-.section-heading .eyebrow {
-    margin-bottom: 8px;
-}
-
-
-/* =========================================
-   5. ABOUT SECTION
-========================================= */
 
 .about-content {
-    max-width: 850px;
+    max-width: 900px;
 }
 
 .about-content p {
@@ -213,16 +212,17 @@ header {
 
 
 /* =========================================
-   6. TECHNICAL SKILLS
+   SKILLS
 ========================================= */
 
 .skills-section {
     max-width: none;
-    background-color: var(--light-gray);
+    background: var(--light-gray);
 }
 
-.skills-section > * {
-    max-width: 1090px;
+.skills-section .section-heading,
+.skills-section .skills-grid {
+    max-width: 1140px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -234,10 +234,10 @@ header {
 }
 
 .skill-card {
-    background-color: var(--white);
+    background: var(--white);
     padding: 25px;
+    border: 1px solid var(--border);
     border-radius: 7px;
-    border: 1px solid #e5e9ef;
     transition: 0.3s;
 }
 
@@ -259,59 +259,123 @@ header {
 
 
 /* =========================================
-   7. PROJECT CARDS
+   PROJECTS
 ========================================= */
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+    align-items: stretch;
 }
 
 .project-card {
-    background-color: var(--white);
-    border: 1px solid #e3e8ef;
+    background: var(--white);
+    border: 1px solid var(--border);
     border-radius: 8px;
     overflow: hidden;
-    transition: 0.3s;
     box-shadow: 0 3px 12px rgba(0, 0, 0, 0.03);
+    transition: 0.3s;
 }
 
 .project-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 25px rgba(20, 43, 69, 0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(20, 43, 69, 0.10);
+}
+
+/* Temporary image area until you add your own photos */
+
+.project-image-placeholder {
+    min-height: 190px;
+    background: linear-gradient(
+        135deg,
+        #eaf1f7,
+        #d8e4ef
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--blue);
+    font-size: 14px;
+    font-weight: 650;
+    text-align: center;
+    padding: 20px;
 }
 
 .project-info {
     padding: 28px;
 }
 
-.project-category {
+.project-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.project-meta span {
+    background: var(--light-blue);
     color: var(--blue);
-    font-size: 11px;
+    padding: 5px 9px;
+    border-radius: 4px;
+    font-size: 10px;
     font-weight: 750;
-    letter-spacing: 1.5px;
-    margin-bottom: 12px;
+    letter-spacing: 0.5px;
 }
 
 .project-info h3 {
     color: var(--navy);
-    font-size: 20px;
-    margin-bottom: 15px;
+    font-size: 21px;
+    line-height: 1.35;
+    margin-bottom: 14px;
 }
 
-.project-info > p:not(.project-category) {
+.project-info > p:not(.project-tools) {
+    color: var(--gray);
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+
+.project-info h4 {
+    color: var(--navy);
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.project-info ul {
+    padding-left: 20px;
     color: var(--gray);
     font-size: 14px;
     margin-bottom: 20px;
 }
 
+.project-info li {
+    margin-bottom: 7px;
+}
+
+.project-tools {
+    color: var(--gray);
+    font-size: 13px;
+    margin: 15px 0;
+}
+
+.project-tools strong {
+    color: var(--navy);
+}
+
+.project-status {
+    color: var(--blue);
+    font-size: 13px;
+    font-weight: 700;
+}
+
 .project-link {
-    display: inline-block;
+    display: block;
+    width: fit-content;
     color: var(--blue);
     font-size: 14px;
     font-weight: 700;
-    margin-top: 8px;
+    margin-top: 12px;
 }
 
 .project-link:hover {
@@ -321,42 +385,57 @@ header {
 
 
 /* =========================================
-   8. EXPERIENCE SECTION
+   EXPERIENCE
 ========================================= */
 
 .experience-section {
     max-width: none;
-    background-color: var(--light-gray);
+    background: var(--light-gray);
 }
 
-.experience-section > * {
-    max-width: 1090px;
+.experience-section .section-heading,
+.experience-card {
+    max-width: 1140px;
     margin-left: auto;
     margin-right: auto;
 }
 
 .experience-card {
-    background-color: var(--white);
+    background: var(--white);
     padding: 35px;
     border-left: 4px solid var(--blue);
     border-radius: 5px;
     box-shadow: 0 3px 15px rgba(0, 0, 0, 0.04);
 }
 
+.experience-date {
+    color: var(--blue);
+    font-size: 11px;
+    font-weight: 750;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+}
+
 .experience-card h3 {
     color: var(--navy);
-    font-size: 22px;
+    font-size: 23px;
 }
 
 .experience-card h4 {
     color: var(--blue);
-    font-size: 16px;
+    font-size: 17px;
     margin-bottom: 18px;
 }
 
-.experience-description {
+.experience-card h5 {
+    color: var(--navy);
+    font-size: 15px;
+    margin: 20px 0 10px;
+}
+
+.experience-card > p:not(.experience-date):not(.project-tools) {
     color: var(--gray);
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .experience-card ul {
@@ -370,7 +449,7 @@ header {
 
 
 /* =========================================
-   9. CONTACT SECTION
+   CONTACT
 ========================================= */
 
 .contact-section {
@@ -378,8 +457,13 @@ header {
 }
 
 .contact-section .section-heading {
-    max-width: 650px;
+    max-width: 700px;
     margin: 0 auto 30px;
+}
+
+.contact-section .section-heading > p:not(.eyebrow) {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .contact-links {
@@ -390,8 +474,7 @@ header {
 }
 
 .contact-links a {
-    display: inline-block;
-    background-color: var(--navy);
+    background: var(--navy);
     color: var(--white);
     padding: 12px 25px;
     border-radius: 5px;
@@ -400,17 +483,17 @@ header {
 }
 
 .contact-links a:hover {
-    background-color: var(--blue);
+    background: var(--blue);
     transform: translateY(-2px);
 }
 
 
 /* =========================================
-   10. FOOTER
+   FOOTER
 ========================================= */
 
 footer {
-    background-color: var(--navy);
+    background: var(--navy);
     color: #c8d9e8;
     text-align: center;
     padding: 25px;
@@ -419,7 +502,7 @@ footer {
 
 
 /* =========================================
-   11. MOBILE RESPONSIVENESS
+   MOBILE RESPONSIVENESS
 ========================================= */
 
 @media (max-width: 900px) {
@@ -444,7 +527,7 @@ footer {
     .nav-links {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 15px;
+        gap: 14px;
     }
 
     .hero {
@@ -453,11 +536,11 @@ footer {
     }
 
     .hero h1 {
-        font-size: 40px;
+        font-size: 42px;
     }
 
     .hero h2 {
-        font-size: 19px;
+        font-size: 18px;
     }
 
     .section {
@@ -478,4 +561,3 @@ footer {
     }
 
 }
-
